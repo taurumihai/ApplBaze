@@ -60,6 +60,7 @@ public class HomeController {
                 loggedUser.setRolesList(allRolesList);
                 userService.saveUSer(loggedUser);
                 model.addAttribute("adminUserLogged", Boolean.TRUE);
+                session.setAttribute("loggedUser", loggedUser);
             }
 
             return "welcome";
@@ -114,9 +115,9 @@ public class HomeController {
 
         List<User> userList = userService.findAllUsers();
         List<String> errorList = new ArrayList<String>();
-        List<Roles> allRolesList = new ArrayList<>();
-        Roles basiRole = rolesService.findRoleById(1L);
-        allRolesList.add(basiRole);
+        List<Roles> allRolesList = rolesService.findAllRoles();
+        allRolesList.remove(1);
+
 
         for (User user : userList) {
 

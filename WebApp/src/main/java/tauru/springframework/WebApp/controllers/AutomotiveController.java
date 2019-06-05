@@ -79,7 +79,7 @@ public class AutomotiveController {
         {
             for (AutomotiveRides rides : automotiveRidesList)
             {
-                if (rides.getDuration() > 120 && rides.getDuration() < 240)
+                if (rides != null && rides.getDuration() != null && rides.getDuration() > 120 && rides.getDuration() < 240)
                 {
                     rideForCurrentAutomotive.add(rides);
                 }
@@ -96,7 +96,7 @@ public class AutomotiveController {
         {
             for (AutomotiveRides rides : automotiveRidesList)
             {
-                if ( rides.getDuration() < 60)
+                if (rides != null && rides.getDuration() != null && rides.getDuration() < 60)
                 {
                     rideForCurrentAutomotive.add(rides);
                 }
@@ -118,6 +118,11 @@ public class AutomotiveController {
     public String takeRideView(@PathVariable(name = "id") String automotiveRideId, HttpSession session, Model model)
     {
         User loggedUser = (User) session.getAttribute("loggedUser");
+        if (loggedUser.getUsername().equals("admin"))
+        {
+            model.addAttribute("adminIsLogged", Boolean.TRUE);
+        }
+
         AutomotiveRides automotiveRides = automotiveRidesService.findAutomotiveRideById(Long.valueOf(automotiveRideId));
 
         if (loggedUser != null)

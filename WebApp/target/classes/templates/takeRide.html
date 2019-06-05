@@ -21,7 +21,9 @@
 
     </div>
 
-    <button onclick="window.location.href='/automotive'">Pagina Autovehicule</button>
+    <div th:if="${adminIsLogged == null}">
+     <button onclick="window.location.href='/automotive'">Pagina Autovehicule</button>
+    </div>
     <button onclick="window.location.href='/'">Home Page</button>
 
 </body>
