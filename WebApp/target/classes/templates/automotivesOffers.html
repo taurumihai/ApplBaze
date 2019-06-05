@@ -22,9 +22,11 @@
                     <td th:text="${automotiveRide.duration}">...</td>
                     <td th:text="${automotiveRide.amountOfValueUserIsPayed}"> RON</td>
                     <td th:text="${automotiveRide.rideStartAt}">...</td>
-                    <td>
-                        <a th:href="@{takeRide/__${automotiveRide.id}__}" class="btn btn-danger">Ia cursa</a>
-                    </td>
+                    <div th:if="${userIsRegistredAsDriver != null && userIsRegistredAsDriver}">
+                        <td>
+                            <a th:href="@{takeRide/__${automotiveRide.id}__}" class="btn btn-danger">Ia cursa</a>
+                        </td>
+                    </div>
             </tr>
         </th:block>
 

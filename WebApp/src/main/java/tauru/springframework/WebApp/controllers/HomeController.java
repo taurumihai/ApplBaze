@@ -88,7 +88,9 @@ public class HomeController {
         if (loggedUser != null)
         {
 
+            allRolesList.remove(1);
             loggedUser.setUserIsLoggedIn(Boolean.TRUE);
+            loggedUser.setRolesList(allRolesList);
             userService.saveUSer(loggedUser);
             session.setAttribute("loggedUser", loggedUser);
 

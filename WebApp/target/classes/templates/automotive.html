@@ -31,7 +31,9 @@
 
     </table>
 
-    <a th:href="@{addRides}" class="btn btn-danger">Adauga curse</a>
+    <div th:if="${adminLoggedIn != null}">
+        <a th:href="@{addRides}" class="btn btn-danger">Adauga curse</a>
+    </div>
 
 </body>
 </html>

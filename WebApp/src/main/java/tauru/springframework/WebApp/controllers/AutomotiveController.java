@@ -44,6 +44,13 @@ public class AutomotiveController {
     @RequestMapping("/automotive")
     public String viewAutomotive(Model model, HttpSession session) {
 
+        User loggedUser = (User) session.getAttribute("loggedUser");
+
+        if (loggedUser != null && !loggedUser.getRolesList().isEmpty() && loggedUser.getRolesList().size() > 1)
+        {
+            model.addAttribute("adminLoggedIn", true);
+        }
+
         model.addAttribute("allAutomotives", automotiveService.getAllAutomotives());
 
         return "automotive";
@@ -53,6 +60,12 @@ public class AutomotiveController {
     public String viewOffersOfAutomotives(@PathVariable(name = "id") String automotiveId, HttpSession session, Model model) {
 
         Automotive currentAutomotive = automotiveService.findAutomotiveById(Long.valueOf(automotiveId));
+        User loggedUser = (User) session.getAttribute("loggedUser");
+
+        if (loggedUser != null && loggedUser.getDriver() != null)
+        {
+            model.addAttribute("userIsRegistredAsDriver", Boolean.TRUE);
+        }
 
         // iau toate cursele si in functie de tipul masinii stabilesc care cum preia
         List<AutomotiveRides> automotiveRidesList = automotiveRidesService.findAll();
