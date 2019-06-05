@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="#" th:action="@{/addRides}" method="post">
+            <div class="form-group">
+                <label for="description">Descriere</label>:
+                <input type="text"
+                       id="description"
+                       name="description"
+                       class="form-control"
+                       autofocus="autofocus"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="duration">Durata</label>:
+                <input type="text"
+                       id="duration"
+                       name="duration"
+                       class="form-control"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="userIsPayd">Conducatorul primeste </label>:
+                <input type="text"
+                       id="userIsPayd"
+                       name="userIsPayd"
+                       class="form-control"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="rideStartAt">Cursa incepe la ora </label>:
+                <input type="text"
+                       id="rideStartAt"
+                       name="rideStartAt"
+                       class="form-control"
+                       placeholder="">
+            </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <input type="submit"
+                           name="login-submit"
+                           id="login-submit"
+                           class="form-control btn btn-info"
+                           value="Log In">
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>

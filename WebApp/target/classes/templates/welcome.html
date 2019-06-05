@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+</head>
+<body>
+
+    <h3> Bine ati venit !</h3>
+
+
+    <a href="/profile"> Profil</a>
+
+    <a href="/automotive"> Autovehicule</a>
+
+    <div th:if="${adminUserLogged == null || !adminUserLogged}">
+        <a href="drivers"> Vreau sa fiu conducator auto</a>
+    </div>
+
+
+    <div th:if="${adminUserLogged == null || !adminUserLogged}">
+        <table>
+
+            <h4> Curse efectuate</h4>
+            <div th:if="${allUserRides ==null || allUserRides.isEmpty()}">
+                <span> Nu ati acceptat nicio cursa momentan !</span>
+            </div>
+
+            <div th:if="${allUserRides != null}">
+                <td>Descriere</td>
+                <td>Durata/(Minute)</td>
+                <td>Venit</td>
+            </div>
+            <th:block th:each="automotiveRide : ${allUserRides}">
+                <tr>
+                    <td th:text="${automotiveRide.description}"></td>
+                    <td th:text="${automotiveRide.duration}"></td>
+                    <td th:text="${automotiveRide.amountOfValueUserIsPayed} + ' RON'"></td>
+                </tr>
+            </th:block>
+
+        </table>
+    </div>
+
+        <div th:if="${totalPaid != null}">
+            <span> In decursul curselor ati obtinut un profit de <td th:text="${totalPaid} + ' RON'"></td></span>
+        </div>
+</body>
+</html>

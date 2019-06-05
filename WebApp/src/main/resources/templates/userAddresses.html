@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Addresses</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/userAddresses}" method="post">
+
+    <div th:if="changedAddresses">
+        <div class="form-group">
+            <label for="county">County</label>:
+            <input type="text"
+                   id="county"
+                   name="county"
+                   class="form-control"
+                   autofocus="autofocus"
+                   placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="street">Street</label>:
+            <input type="text"
+                   id="street"
+                   name="street"
+                   class="form-control"
+                   placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="streetNumber">Street Number</label>:
+            <input type="text"
+                   id="streetNumber"
+                   name="streetNumber"
+                   class="form-control"
+                   placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="zipCode">Zip Code</label>:
+            <input type="text"
+                   id="zipCode"
+                   name="zipCode"
+                   class="form-control"
+                   placeholder="">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <input type="submit"
+                           name="login-submit"
+                           id="login-submit"
+                           class="form-control btn btn-info"
+                           value="Submit">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<button onclick="window.location.href='/profile'">Profile page</button>
+
+
+    <div th:if="${addressesList != null}">
+        <div th:each=" address : ${addressesList}">
+                Jundetul: <span th:text="${address.county}"></span>
+                Strada: <span th:text="${address.street}"></span>
+                Nr. <span th:text="${address.streetNumber}"></span>
+                Cod postal: <span th:text="${address.zipCode}"></span>
+            </div>
+        </div>
+
+    </div>
+    <div th:if="${loggedUser.hasChangedAddressInfos != null && !loggedUser.hasChangedAddressInfos}">
+
+        <div th:if="${errorList != null}">
+            <div th:each="er : ${errorList}">
+                <span th:text="${er.error}"/>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drivers Form</title>
+</head>
+<body>
+
+    <form action="#" th:action="@{/drivers}" method="post">
+        <div th:if="${driverIsRegistered != null && !driverIsRegistered}">
+            <div class="form-group" hidden = "true">
+                <label for="username">Username</label>:
+                <input type="text"
+                       id="username"
+                       name="username"
+                       class="form-control"
+                       autofocus="autofocus"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="firstName">Nume</label>:
+                <input type="firstName"
+                       id="firstName"
+                       name="firstName"
+                       class="form-control"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Prenume</label>:
+                <input type="lastName"
+                       id="lastName"
+                       name="lastName"
+                       class="form-control"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="age">Varsta</label>:
+                <input type="age"
+                       id="age"
+                       name="age"
+                       class="form-control"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="experienceAge">Experienta</label>:
+                <input type="experienceAge"
+                       id="experienceAge"
+                       name="experienceAge"
+                       class="form-control"
+                       placeholder="">
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit"
+                               name="login-submit"
+                               id="login-submit"
+                               class="form-control btn btn-info"
+                               value="Incrie-te">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div th:switch="${success != null}">
+        <div th:case="${success}">
+            <div th:text=" 'Salut,' + ${loggedUser.firstName} + ' ' + ${loggedUser.lastName} + '.' + ' Bun venit in reteaua noastra de soferi!'">
+        </div>
+        <div th:case="${!success}">
+            <span>Ne cerem scuze, a intervenit o eroare. Va rugam incercati mai tarziu !</span>
+        </div>
+    </div>
+
+    <div th:if="${driverIsRegistered != null && driverIsRegistered}">
+        <span th:text="'Bine ai revenit, ' + ${loggedUser.firstName} + ' ' + ${loggedUser.lastName} + '!'" > </span>
+    </div>
+
+    <div th:if="${driverIsRegistered != null && !driverIsRegistered}">
+        <div th:if="${errorList != null}">
+            <div th:each="er : ${errorList}">
+                <span th:text="${er.error}"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
