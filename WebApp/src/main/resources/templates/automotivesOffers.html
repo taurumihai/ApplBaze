@@ -6,18 +6,20 @@
 </head>
 <body>
 
-    <table>
-        <td>Descriere</td>
-        <td>Durata</td>
-        <td>Venit</td>
-        <td>Plecare la ora: </td>
+    <div th:if="${automotiveRides!=null && automotiveRides.isEmpty()}">
+        <span> Nu exista oferte de calatorii pentru acest autovehicul !</span>
+    </div>
 
-        <div th:if="${automotiveRides!=null && automotiveRides.isEmpty()}">
-            <span> Nu exista curse pentru autovehiculul selectat !</span>
-        </div>
+    <div th:if="${automotiveRides!=null && !automotiveRides.isEmpty()}">
 
-        <th:block th:each="automotiveRide : ${automotiveRides}">
-            <tr>
+        <table>
+            <td>Descriere</td>
+            <td>Durata</td>
+            <td>Venit</td>
+            <td>Plecare la ora: </td>
+
+            <th:block th:each="automotiveRide : ${automotiveRides}">
+                <tr>
                     <td th:text="${automotiveRide.description}">...</td>
                     <td th:text="${automotiveRide.duration}">...</td>
                     <td th:text="${automotiveRide.amountOfValueUserIsPayed}"> RON</td>
@@ -27,10 +29,12 @@
                             <a th:href="@{takeRide/__${automotiveRide.id}__}" class="btn btn-danger">Ia cursa</a>
                         </td>
                     </div>
-            </tr>
-        </th:block>
+                </tr>
+            </th:block>
 
-    </table>
+        </table>
+    </div>
+
 
 </body>
 </html>

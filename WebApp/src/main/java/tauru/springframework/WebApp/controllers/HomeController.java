@@ -88,7 +88,11 @@ public class HomeController {
         if (loggedUser != null)
         {
 
-            allRolesList.remove(1);
+            if (allRolesList != null && !allRolesList.isEmpty())
+            {
+                allRolesList.remove(1);
+            }
+
             loggedUser.setUserIsLoggedIn(Boolean.TRUE);
             loggedUser.setRolesList(allRolesList);
             userService.saveUSer(loggedUser);
@@ -118,7 +122,11 @@ public class HomeController {
         List<User> userList = userService.findAllUsers();
         List<String> errorList = new ArrayList<String>();
         List<Roles> allRolesList = rolesService.findAllRoles();
-        allRolesList.remove(1);
+
+        if (allRolesList != null && !allRolesList.isEmpty())
+        {
+            allRolesList.remove(1);
+        }
 
 
         for (User user : userList) {
