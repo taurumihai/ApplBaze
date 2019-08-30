@@ -1,6 +1,8 @@
 package tauru.springframework.WebApp.controllers;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,11 +12,14 @@ import tauru.springframework.WebApp.entities.User;
 import tauru.springframework.WebApp.services.AutomotiveRidesService;
 import tauru.springframework.WebApp.services.RolesService;
 import tauru.springframework.WebApp.services.UserService;
+import tauru.springframework.WebApp.sessionConstants.SessionConstants;
 import tauru.springframework.WebApp.utilitare.OroErrors;
 import tauru.springframework.WebApp.utilitare.StringUtils;
 
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -39,28 +44,37 @@ public class HomeController {
     }
 
     @RequestMapping("/login")
-    public String view (String username, String password, Model model, HttpSession session) {
+    public String view (String username, String password, Model model, HttpSession session, HttpServletRequest request) {
 
         List<OroErrors> oroErrorsList = new ArrayList<>();
         List<AutomotiveRides> allRidesFromDB = automotiveRidesService.findAll();
         List<AutomotiveRides> allRidesOfLoggedUser = new ArrayList<>();
         List<Roles> allRolesList = rolesService.findAllRoles();
+        session = request.getSession(true);
 
         if (StringUtils.isNullOrEmpty(username) && StringUtils.isNullOrEmpty(password)) {
-
             return "login";
         }
 
         User loggedUser = userService.findUSerByUSernameAndPassword(username, password);
+        if (loggedUser != null) {
+            session.setAttribute("loggedUser", loggedUser);
+        } else {
+            model.addAttribute("logginError", "Username-ul sau parola este incorecta.");
+        }
 
-        if ("admin".equals(loggedUser.getUsername()) && "admin".equals(loggedUser.getPassword()))
+        if (loggedUser != null && loggedUser.getDriver() != null)
+        {
+            model.addAttribute("userIsLoggedAsDriver", loggedUser.getDriver() != null ? Boolean.TRUE : Boolean.FALSE);
+        }
+
+        if (loggedUser != null && "admin".equals(loggedUser.getUsername()) && "admin".equals(loggedUser.getPassword()))
         {
             if (loggedUser.getRolesList().isEmpty())
             {
                 loggedUser.setRolesList(allRolesList);
                 userService.saveUSer(loggedUser);
                 model.addAttribute("adminUserLogged", Boolean.TRUE);
-                session.setAttribute("loggedUser", loggedUser);
             }
 
             return "welcome";
@@ -87,7 +101,6 @@ public class HomeController {
 
         if (loggedUser != null)
         {
-
             if (allRolesList != null && !allRolesList.isEmpty())
             {
                 allRolesList.remove(1);
@@ -96,19 +109,10 @@ public class HomeController {
             loggedUser.setUserIsLoggedIn(Boolean.TRUE);
             loggedUser.setRolesList(allRolesList);
             userService.saveUSer(loggedUser);
-            session.setAttribute("loggedUser", loggedUser);
-
             return "welcome";
 
         }
-        else
-        {
-
-            oroErrorsList.add(new OroErrors("Nu exista contul"));
-            model.addAttribute("errorList", oroErrorsList);
-            return "login";
-
-        }
+        return "login";
     }
 
     @RequestMapping("/register")

@@ -1,11 +1,12 @@
 package tauru.springframework.WebApp.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "Users")
-public class User {
+public class User implements Serializable {
 
 
     @Id

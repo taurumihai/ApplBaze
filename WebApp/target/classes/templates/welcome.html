@@ -13,7 +13,7 @@
 
     <a href="/automotive"> Autovehicule</a>
 
-    <div th:if="${adminUserLogged == null || !adminUserLogged}">
+    <div th:if="${( userIsLoggedAsDriver != null && !userIsLoggedAsDriver )}">
         <a href="drivers"> Vreau sa fiu conducator auto</a>
     </div>
 

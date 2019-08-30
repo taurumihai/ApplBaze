@@ -6,8 +6,35 @@
 </head>
 <body>
 
-<a href="/changePassword" > Schimbare Parola</a>
+        <a href="/changePassword" > Schimbare Parola</a>
 
-<a href="/userAddresses"> Adrese de livrare/facturare</a>
+        <a href="/userAddresses"> Adrese de facturare</a>
+
+        <div th:if="${adminUserLogged == null || !adminUserLogged}">
+            <table>
+
+                <h4> Adrese curente</h4>
+                <div th:if="${userAddressesList ==null || userAddressesList.isEmpty()}">
+                    <span> Nu aveti nicio adresa adaugata !</span>
+                </div>
+
+                <div th:if="${userAddressesList != null}">
+                    <td>Judet</td>
+                    <td>Strada</td>
+                    <td>Numarul</td>
+                    <td>Cod postal</td>
+                </div>
+                <th:block th:each="address : ${userAddressesList}">
+                    <tr>
+                        <td th:text="${address.county}"></td>
+                        <td th:text="${address.street}"></td>
+                        <td th:text="${address.streetNumber}"></td>
+                        <td th:text="${address.zipCode}"></td>
+                    </tr>
+                </th:block>
+
+            </table>
+        </div>
+
 </body>
 </html>

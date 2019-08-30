@@ -12,6 +12,7 @@ import tauru.springframework.WebApp.services.UserService;
 import tauru.springframework.WebApp.utilitare.OroErrors;
 import tauru.springframework.WebApp.utilitare.StringUtils;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,35 +27,36 @@ public class UserProfileController {
     private AddressService addressService;
 
     @RequestMapping("/profile")
-    public String viewProfile() {
+    public String viewProfile(HttpSession session, Model model) {
+
+        User loggedUser = (User) session.getAttribute("loggedUser");
+
+        if (loggedUser != null && !loggedUser.getAddressList().isEmpty()) {
+            model.addAttribute("userAddressesList", loggedUser.getAddressList());
+        }
 
         return "profile";
     }
 
     @RequestMapping("/changePassword")
-    public String changePasswordView(String username, String password, String newPassword, Model model) {
+    public String changePasswordView(HttpSession session,  String password, String newPassword, Model model) {
 
-        User currentUser = null;
         Boolean success;
         List<OroErrors> errorsList = new ArrayList<>();
+        User loggedUser = (User) session.getAttribute("loggedUser");
 
-        if (username != null && password != null) {
+        if (loggedUser != null && newPassword != null) {
 
-            currentUser  = userService.findUSerByUSernameAndPassword(username, password);
-        }
-
-        if (currentUser != null && newPassword != null) {
-
-            if (newPassword.equals(password)) {
+            if (newPassword.equals(loggedUser.getPassword())) {
 
                 errorsList.add(new OroErrors("Noua parola nu poate coincide cu cea veche"));
 
             } else {
 
                 success = Boolean.TRUE;
-                currentUser.setPassword(newPassword);
+                loggedUser.setPassword(newPassword);
                 model.addAttribute("passwordChanged", success);
-                userService.saveUSer(currentUser);
+                userService.saveUSer(loggedUser);
             }
         }
         model.addAttribute("errorList", errorsList);
@@ -99,43 +101,20 @@ public class UserProfileController {
         }
 
         model.addAttribute("errorList", errors);
-        if (errors.isEmpty() && !loggedUser.getHasChangedAddressInfos()) {
+        if (errors.isEmpty()) {
 
-            if (loggedUser.getAddressList() != null && loggedUser.getAddressList().isEmpty()) {
+            loggedUser.setHasChangedAddressInfos(Boolean.TRUE);
+            Address userAddress = new Address();
+            userAddress.setCounty(county);
+            userAddress.setStreetNumber(streetNumber);
+            userAddress.setStreet(street);
+            userAddress.setZipCode(zipCode);
+            userAddress.setUser(loggedUser);
+            loggedUser.setHasChangedAddressInfos(Boolean.TRUE);
+            loggedUser.getAddressList().add(userAddress);
+            addressService.saveAddress(userAddress);
+            userService.saveUSer(loggedUser);
 
-                loggedUser.setHasChangedAddressInfos(Boolean.TRUE);
-                Address userAddress = new Address();
-
-                userAddress.setCounty(county);
-                userAddress.setStreetNumber(streetNumber);
-                userAddress.setStreet(street);
-                userAddress.setZipCode(zipCode);
-                userAddress.setUser(loggedUser);
-                loggedUser.setHasChangedAddressInfos(Boolean.TRUE);
-
-                loggedUser.getAddressList().add(userAddress);
-                addressService.saveAddress(userAddress);
-                userService.saveUSer(loggedUser);
-            }
-
-        } else if (errors.isEmpty() && loggedUser.getHasChangedAddressInfos()) {
-
-            if (!StringUtils.isNullOrEmpty(county)  && !StringUtils.isNullOrEmpty(street) && !StringUtils.isNullOrEmpty(streetNumber)
-                 && !StringUtils.isNullOrEmpty(zipCode))
-            {
-                Address userAddress = new Address();
-
-                userAddress.setCounty(county);
-                userAddress.setStreetNumber(streetNumber);
-                userAddress.setStreet(street);
-                userAddress.setZipCode(zipCode);
-                userAddress.setUser(loggedUser);
-                loggedUser.getAddressList().add(userAddress);
-                loggedUser.setHasChangedAddressInfos(Boolean.TRUE);
-
-                addressService.saveAddress(userAddress);
-                userService.saveUSer(loggedUser);
-            }
         }
 
         if (loggedUser.getAddressList() != null && !loggedUser.getAddressList().isEmpty()) {

@@ -51,6 +51,10 @@
         </div>
     </div>
 
+    <div th:if="${logginError}">
+        <span th:text="${logginError}"/>
+    </div>
+
     <p><a href="/" th:href="@{/}">Back to home page</a></p>
 
 </div>
