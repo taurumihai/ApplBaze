@@ -15,6 +15,7 @@
 /home/mihai/Desktop/ApplBaze/ApplBaze/WebApp/src/main/java/tauru/springframework/WebApp/entities/AutomotiveRides.java
 /home/mihai/Desktop/ApplBaze/ApplBaze/WebApp/src/main/java/tauru/springframework/WebApp/repositories/AutomotiveRidesRepository.java
 /home/mihai/Desktop/ApplBaze/ApplBaze/WebApp/src/main/java/tauru/springframework/WebApp/entities/Driver.java
+/home/mihai/Desktop/ApplBaze/ApplBaze/WebApp/src/main/java/tauru/springframework/WebApp/sessionConstants/SessionConstants.java
 /home/mihai/Desktop/ApplBaze/ApplBaze/WebApp/src/main/java/tauru/springframework/WebApp/enums/AutomotiveTypeEnum.java
 /home/mihai/Desktop/ApplBaze/ApplBaze/WebApp/src/main/java/tauru/springframework/WebApp/repositories/UserRepository.java
 /home/mihai/Desktop/ApplBaze/ApplBaze/WebApp/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java
