@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08bcb56d-2ab5-4e52-8388-950b1e2d0e0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/sessionConstants/SessionConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/UserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/changePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/takeRide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/takeRide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/changePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/takeRide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/takeRide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="52" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -46,6 +34,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RESET_MODE" value="SOFT" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
@@ -54,6 +49,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../LAB7_FINAL/pom.xml" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -68,24 +64,94 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="WebAppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.WebAppApplication" />
+  <component name="RunManager" selected="JUnit.UserTest.testUserConstructor">
+    <configuration name="UserTest.createDummyUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WebApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tauru.springframework.WebApp.*" />
+          <option name="PATTERN" value="tauru.springframework.WebApp.entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
+      <option name="METHOD_NAME" value="createDummyUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.saveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WebApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tauru.springframework.WebApp.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
+      <option name="METHOD_NAME" value="saveUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WebApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tauru.springframework.WebApp.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
+      <option name="METHOD_NAME" value="testDeleteUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.testSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WebApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tauru.springframework.WebApp.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
+      <option name="METHOD_NAME" value="testSaveUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.testUserConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WebApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tauru.springframework.WebApp.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
+      <option name="METHOD_NAME" value="testUserConstructor" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebAppApplication" />
-        <item itemvalue="Application.WebAppApplication" />
+        <item itemvalue="JUnit.UserTest.testUserConstructor" />
+        <item itemvalue="JUnit.UserTest.testDeleteUser" />
+        <item itemvalue="JUnit.UserTest.testSaveUser" />
+        <item itemvalue="JUnit.UserTest.createDummyUser" />
+        <item itemvalue="JUnit.UserTest.saveUser" />
       </list>
     </recent_temporary>
   </component>
@@ -125,7 +191,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -163,12 +231,25 @@
           <line>70</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/UserService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/WebApp$UserTest_saveUser.ic" NAME="UserTest.saveUser Coverage Results" MODIFIED="1567255236718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tauru.springframework.WebApp.entities.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/WebApp$UserTest_saveNullUser.ic" NAME="UserTest.saveNullUser Coverage Results" MODIFIED="1567254375836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tauru.springframework.WebApp.entities.*</FILTER>
+    </SUITE>
   </component>
   <component name="masterDetails">
     <states>
