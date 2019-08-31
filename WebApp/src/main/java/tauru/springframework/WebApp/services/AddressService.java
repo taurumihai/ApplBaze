@@ -29,5 +29,10 @@ public class AddressService {
         return addressRepository.findAllAddressesByStreetName(streetName);
     }
 
+    public Address findStreetByStreetName(String streetName) {
+
+        return addressRepository.findStreetByStreetName(streetName);
+    }
+
 
 }

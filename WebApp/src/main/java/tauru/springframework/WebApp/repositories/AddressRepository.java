@@ -13,5 +13,7 @@ public interface AddressRepository extends JpaRepository<Address, Long> {
     @Query(value = "select address from Address address where address.street = ?1")
     List<Address> findAllAddressesByStreetName(String streetName);
 
+    @Query(value = "select address from Address address where address.street = ?1")
+    Address findStreetByStreetName(String streetName);
 
 }

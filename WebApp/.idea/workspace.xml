@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08bcb56d-2ab5-4e52-8388-950b1e2d0e0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/AddressesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/AddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/AddressRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/AddressRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/AddressService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/AddressService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tauru/springframework/WebApp/entities/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tauru/springframework/WebApp/entities/UserTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,8 +68,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest.testUserConstructor">
-    <configuration name="UserTest.createDummyUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AddressesTest.testSaveAddress">
+    <configuration name="AddressesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WebApp" />
       <extension name="coverage">
         <pattern>
@@ -74,14 +78,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
-      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
-      <option name="METHOD_NAME" value="createDummyUser" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.AddressesTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.saveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AddressesTest.testSaveAddress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WebApp" />
       <extension name="coverage">
         <pattern>
@@ -90,8 +93,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
-      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
-      <option name="METHOD_NAME" value="saveUser" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.AddressesTest" />
+      <option name="METHOD_NAME" value="testSaveAddress" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddressesTest.testSaveAddress" />
+        <item itemvalue="JUnit.AddressesTest" />
         <item itemvalue="JUnit.UserTest.testUserConstructor" />
         <item itemvalue="JUnit.UserTest.testDeleteUser" />
         <item itemvalue="JUnit.UserTest.testSaveUser" />
-        <item itemvalue="JUnit.UserTest.createDummyUser" />
-        <item itemvalue="JUnit.UserTest.saveUser" />
       </list>
     </recent_temporary>
   </component>
@@ -235,6 +238,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/UserService.java</url>
           <line>30</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/AddressesTest.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
