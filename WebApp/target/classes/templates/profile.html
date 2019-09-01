@@ -10,6 +10,8 @@
 
         <a href="/userAddresses"> Adrese de facturare</a>
 
+        <a href="/personalData"> Date personale</a>
+
         <div th:if="${adminUserLogged == null || !adminUserLogged}">
             <table>
 
@@ -30,6 +32,26 @@
                         <td th:text="${address.street}"></td>
                         <td th:text="${address.streetNumber}"></td>
                         <td th:text="${address.zipCode}"></td>
+                    </tr>
+                </th:block>
+
+            </table>
+        </div>
+
+        <div th:if="${adminUserLogged == null || !adminUserLogged}">
+            <table>
+                <h4> Date personale</h4>
+
+                <div th:if="${userAddressesList != null}">
+                    <td>Nume</td>
+                    <td>Prenume</td>
+                    <td>Email</td>
+                </div>
+                <th:block>
+                    <tr>
+                        <td th:text="${loggedUserFirstName}"></td>
+                        <td th:text="${loggedUserLastName}"></td>
+                        <td th:text="${loggedUserEmail}"></td>
                     </tr>
                 </th:block>
 

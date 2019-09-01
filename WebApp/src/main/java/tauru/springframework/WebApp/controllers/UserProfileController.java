@@ -33,9 +33,28 @@ public class UserProfileController {
 
         if (loggedUser != null && !loggedUser.getAddressList().isEmpty()) {
             model.addAttribute("userAddressesList", loggedUser.getAddressList());
+            model.addAttribute("loggedUserEmail", loggedUser.getEmail());
+            model.addAttribute("loggedUserFirstName", StringUtils.getUserName(loggedUser.getFirstName()));
+            model.addAttribute("loggedUserLastName", StringUtils.getUserName(loggedUser.getLastName()));
         }
 
         return "profile";
+    }
+
+    @RequestMapping("/personalData")
+    public String viewPersonalData(HttpSession session, Model model, String email, String firstName, String lastName) {
+
+        User loggedUser = (User) session.getAttribute("loggedUser");
+
+        if (loggedUser != null && !StringUtils.isNullOrEmpty(firstName) && !StringUtils.isNullOrEmpty(lastName)) {
+            loggedUser.setFirstName(firstName);
+            loggedUser.setLastName(lastName);
+            userService.saveUSer(loggedUser);
+            model.addAttribute("firstName", firstName);
+            model.addAttribute("lastName", lastName);
+        }
+
+        return "personalData";
     }
 
     @RequestMapping("/changePassword")

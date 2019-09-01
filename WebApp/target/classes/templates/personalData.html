@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date personale</title>
+</head>
+<body>
+
+    Completati datele
+
+    <form action="#" th:action="@{/personalData}" method="post">
+        <div class="form-group">
+            <label for="firstName">Nume</label>:
+            <input type="text"
+                   id="firstName"
+                   name="firstName"
+                   class="form-control"
+                   placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Prenume</label>:
+            <input type="text"
+                   id="lastName"
+                   name="lastName"
+                   class="form-control"
+                   placeholder="">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <input type="submit"
+                           name="login-submit"
+                           id="login-submit"
+                           class="form-control btn btn-info"
+                           value="Apply">
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

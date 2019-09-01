@@ -5,15 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import tauru.springframework.WebApp.entities.Automotive;
-import tauru.springframework.WebApp.entities.AutomotiveRides;
-import tauru.springframework.WebApp.entities.Driver;
-import tauru.springframework.WebApp.entities.User;
+import tauru.springframework.WebApp.entities.*;
 import tauru.springframework.WebApp.enums.AutomotiveTypeEnum;
-import tauru.springframework.WebApp.services.AutomotiveRidesService;
-import tauru.springframework.WebApp.services.AutomotiveService;
-import tauru.springframework.WebApp.services.DriverService;
-import tauru.springframework.WebApp.services.UserService;
+import tauru.springframework.WebApp.services.*;
 import tauru.springframework.WebApp.utilitare.OroErrors;
 import tauru.springframework.WebApp.utilitare.StringUtils;
 
@@ -22,6 +16,7 @@ import javax.transaction.Transactional;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.logging.Logger;
 
 @Controller
 @Transactional
@@ -39,6 +34,11 @@ public class AutomotiveController {
 
     @Autowired
     private AutomotiveService automotiveService;
+
+    @Autowired
+    private CancelSubscriptionService subscriptionService;
+
+    private static final Logger LOGGER = Logger.getLogger(AutomotiveController.class.getName());
 
 
     @RequestMapping("/automotive")
@@ -167,7 +167,9 @@ public class AutomotiveController {
     public String viewDriversView(String firstName,
                                   String lastName,
                                   String age,
-                                  String experienceAge, Model model, HttpSession session)
+                                  String experienceAge,
+                                  Model model,
+                                  HttpSession session)
     {
 
         User loggedUser = (User) session.getAttribute("loggedUser");
@@ -222,6 +224,7 @@ public class AutomotiveController {
             newDrivre.setAge(Integer.valueOf(age));
             newDrivre.setExperienceYears(Integer.valueOf(experienceAge));
             newDrivre.setIsRegistered(Boolean.TRUE);
+            newDrivre.setUser(loggedUser);
 
             loggedUser.setDriver(newDrivre);
             driverIsRegistered =  Boolean.TRUE;
@@ -258,5 +261,32 @@ public class AutomotiveController {
 
 
         return "addRides";
+    }
+
+    @RequestMapping("/cancelActivityAsDriver")
+    public String cancelActivityAsDriver(Model model, HttpSession session, String cancelSubscriptionMessage) {
+
+        User loggedUser = (User) session.getAttribute("loggedUser");
+
+        if (loggedUser != null && !StringUtils.isNullOrEmpty(cancelSubscriptionMessage)) {
+
+            CancelSubscription cancelSubscription = new CancelSubscription(cancelSubscriptionMessage);
+            cancelSubscription.setDriver(loggedUser.getDriver());
+            loggedUser.getDriver().setCancelSubscription(cancelSubscription);
+            subscriptionService.saveCancelSubscription(cancelSubscription);
+            LOGGER.info("Am setat cancel subscription pe Driver " + loggedUser.getDriver().getCancelSubscription().toString());
+
+            Driver currentDriver = loggedUser.getDriver();
+
+            //setare driver null pe user ca sa se poata efectua stergerea
+            loggedUser.setDriver(null);
+            driverService.deleteDriverById(currentDriver.getId());
+
+            LOGGER.info("---------------------------- Checking if current user has driver class " + currentDriver);
+            userService.saveUSer(loggedUser);
+
+        }
+
+        return "cancelActivityAsDriver";
     }
 }

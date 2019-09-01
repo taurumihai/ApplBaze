@@ -2,16 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08bcb56d-2ab5-4e52-8388-950b1e2d0e0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/CancelSubscription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/CancelSubscriptionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/CancelSubscriptionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cancelActivityAsDriver.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/personalData.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/WebAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/WebAppApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/DriverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/DriverService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/utilitare/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/utilitare/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/automotive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/automotive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/drivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/drivers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/WebAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/WebAppApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/AutomotiveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/AutomotiveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/DriverService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/DriverService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/utilitare/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/utilitare/StringUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/automotive.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/automotive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/drivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/drivers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -55,6 +72,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../LAB7_FINAL/pom.xml" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -217,39 +235,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/UserService.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/AddressesTest.java</url>
           <line>49</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java</url>
+          <line>270</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/DriverService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

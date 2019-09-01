@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inceteaza activitate</title>
+
+    <div class="form-group">
+        <label for="cancelSubscription"> Spune-ne de ce renunti</label>
+        <form action="#" th:action="@{/cancelActivityAsDriver}" method="post">
+            <input type="textarea" id="firstName" name="cancelSubscriptionMessage" class="form-control" placeholder="Mesaj..">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit"
+                               name="cancel"
+                               id="cancel"
+                               class="form-control btn btn-info"
+                               value="Trimite">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</head>
+<body>
+
+</body>
+</html>

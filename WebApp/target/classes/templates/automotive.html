@@ -23,12 +23,10 @@
                 <td th:text="${automotive.horsePower}">...</td>
                 <td th:text="${automotive.description}">...</td>
                 <td>
-
                     <a th:href="@{automotivesOffers/__${automotive.id}__}" class="btn btn-danger">Click</a>
-            </td>
+                </td>
             </tr>
         </th:block>
-
     </table>
 
     <div th:if="${adminLoggedIn != null}">

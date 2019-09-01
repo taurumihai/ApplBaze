@@ -74,6 +74,21 @@
 
     <div th:if="${driverIsRegistered != null && driverIsRegistered}">
         <span th:text="'Bine ai revenit, ' + ${loggedUser.firstName} + ' ' + ${loggedUser.lastName} + '!'" > </span>
+
+        <span> Inceteaza activitatea ca sofer </span>
+            <form action="#" th:action="@{/cancelActivityAsDriver}" method="post">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit"
+                                   name="noMoreDriver"
+                                   id="noMoreDriver"
+                                   class="form-control btn btn-info"
+                                   value="Inceteaza activitate">
+                        </div>
+                    </div>
+                </div>
+            </form>
     </div>
 
     <div th:if="${driverIsRegistered != null && !driverIsRegistered}">

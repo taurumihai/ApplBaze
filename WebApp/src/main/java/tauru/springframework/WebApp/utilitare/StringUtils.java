@@ -6,4 +6,13 @@ public class StringUtils {
 
         return (string == null || "".equals(string));
     }
+
+    public static String getUserName(String firstName) {
+
+        if (firstName != null) {
+            return firstName;
+        } else {
+            return "";
+        }
+    }
 }
