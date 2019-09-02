@@ -271,13 +271,10 @@ public class AutomotiveController {
         if (loggedUser != null && !StringUtils.isNullOrEmpty(cancelSubscriptionMessage)) {
 
             CancelSubscription cancelSubscription = new CancelSubscription(cancelSubscriptionMessage);
-            cancelSubscription.setDriver(loggedUser.getDriver());
-            loggedUser.getDriver().setCancelSubscription(cancelSubscription);
+            cancelSubscription.setUser(loggedUser);
             subscriptionService.saveCancelSubscription(cancelSubscription);
-            LOGGER.info("Am setat cancel subscription pe Driver " + loggedUser.getDriver().getCancelSubscription().toString());
-
             Driver currentDriver = loggedUser.getDriver();
-
+            
             //setare driver null pe user ca sa se poata efectua stergerea
             loggedUser.setDriver(null);
             driverService.deleteDriverById(currentDriver.getId());

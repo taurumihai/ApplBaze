@@ -22,11 +22,6 @@ public class Driver {
     @OneToOne(mappedBy = "driver")
     private User user;
 
-    @OneToOne(mappedBy = "driver")
-    @JoinColumn(name = "subscription_id", referencedColumnName = "id")
-    private CancelSubscription cancelSubscription;
-
-
     public Long getId() {
         return id;
     }
@@ -71,13 +66,5 @@ public class Driver {
 
         this.age = age;
         this.experienceYears = experienceYears;
-    }
-
-    public CancelSubscription getCancelSubscription() {
-        return cancelSubscription;
-    }
-
-    public void setCancelSubscription(CancelSubscription cancelSubscription) {
-        this.cancelSubscription = cancelSubscription;
     }
 }

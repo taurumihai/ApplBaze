@@ -12,9 +12,9 @@ public class CancelSubscription {
 
     private String message;
 
-    @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "driver_id", referencedColumnName = "id")
-    private Driver driver;
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public String getMessage() {
         return message;
@@ -22,14 +22,6 @@ public class CancelSubscription {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
     }
 
     public CancelSubscription(String message) {
@@ -43,5 +35,13 @@ public class CancelSubscription {
     public String toString() {
 
         return this.message;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

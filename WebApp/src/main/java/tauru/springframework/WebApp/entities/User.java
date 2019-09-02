@@ -47,6 +47,9 @@ public class User implements Serializable {
     @JoinColumn(name = "driver_id", referencedColumnName = "id")
     private Driver driver;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade =  CascadeType.ALL, mappedBy = "user")
+    private CancelSubscription cancelSubscription;
+
     public List<Roles> getRolesList() {
         return rolesList;
     }
@@ -148,5 +151,13 @@ public class User implements Serializable {
 
     public User() {
 
+    }
+
+    public CancelSubscription getCancelSubscription() {
+        return cancelSubscription;
+    }
+
+    public void setCancelSubscription(CancelSubscription cancelSubscription) {
+        this.cancelSubscription = cancelSubscription;
     }
 }
