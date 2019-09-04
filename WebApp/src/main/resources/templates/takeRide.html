@@ -11,7 +11,7 @@
 
     </div>
 
-    <div th:if="${rideTaken != null}">
+    <div th:if="${enjoyRide == null && rideTaken != null}">
         <span th:text="${rideTaken}"></span>
 
     </div>

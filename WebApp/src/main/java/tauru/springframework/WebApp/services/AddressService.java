@@ -24,14 +24,19 @@ public class AddressService {
         addressRepository.save(address);
     }
 
-    public List<Address> findAllAddresses(String streetName) {
+    public List<Address> findAllAddresses() {
 
-        return addressRepository.findAllAddressesByStreetName(streetName);
+        return addressRepository.findAll();
     }
 
     public Address findStreetByStreetName(String streetName) {
 
         return addressRepository.findStreetByStreetName(streetName);
+    }
+
+    public List<Address> findAll() {
+
+        return addressRepository.findAll();
     }
 
 

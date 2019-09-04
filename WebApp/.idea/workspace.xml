@@ -2,15 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08bcb56d-2ab5-4e52-8388-950b1e2d0e0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/endRides.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/CancelSubscriptionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/CancelSubscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/CancelSubscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/AutomotiveRides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/AutomotiveRides.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/AddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/AutomotiveRidesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/AutomotiveRidesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/changePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/personalData.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/personalData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/takeRide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/takeRide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userAddresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userAddresses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/AutomotiveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/AutomotiveController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/CancelSubscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/CancelSubscription.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/AutomotiveRides.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/AutomotiveRides.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/AddressRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/AddressRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/AddressService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/AddressService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/AutomotiveRidesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/AutomotiveRidesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/changePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/personalData.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/personalData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/takeRide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/takeRide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userAddresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userAddresses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +57,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -87,7 +117,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddressesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CancelSubscriptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WebApp" />
       <extension name="coverage">
         <pattern>
@@ -96,13 +126,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
-      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.AddressesTest" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.CancelSubscriptionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddressesTest.testSaveAddress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CancelSubscriptionTest.testConstructorCancelSubs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WebApp" />
       <extension name="coverage">
         <pattern>
@@ -111,14 +141,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
-      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.AddressesTest" />
-      <option name="METHOD_NAME" value="testSaveAddress" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.CancelSubscriptionTest" />
+      <option name="METHOD_NAME" value="testConstructorCancelSubs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testSaveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CancelSubscriptionTest.testDeleteSubs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WebApp" />
       <extension name="coverage">
         <pattern>
@@ -127,14 +157,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
-      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
-      <option name="METHOD_NAME" value="testSaveUser" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.CancelSubscriptionTest" />
+      <option name="METHOD_NAME" value="testDeleteSubs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testUserConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CancelSubscriptionTest.testSaveSubs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="WebApp" />
       <extension name="coverage">
         <pattern>
@@ -143,8 +173,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tauru.springframework.WebApp.entities" />
-      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.UserTest" />
-      <option name="METHOD_NAME" value="testUserConstructor" />
+      <option name="MAIN_CLASS_NAME" value="tauru.springframework.WebApp.entities.CancelSubscriptionTest" />
+      <option name="METHOD_NAME" value="testSaveSubs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,18 +182,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.WebAppApplication" />
-      <item itemvalue="JUnit.AddressesTest" />
-      <item itemvalue="JUnit.AddressesTest.testSaveAddress" />
-      <item itemvalue="JUnit.UserTest.testSaveUser" />
-      <item itemvalue="JUnit.UserTest.testUserConstructor" />
+      <item itemvalue="JUnit.CancelSubscriptionTest.testConstructorCancelSubs" />
+      <item itemvalue="JUnit.CancelSubscriptionTest.testSaveSubs" />
+      <item itemvalue="JUnit.CancelSubscriptionTest.testDeleteSubs" />
+      <item itemvalue="JUnit.CancelSubscriptionTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.WebAppApplication" />
-        <item itemvalue="JUnit.UserTest.testSaveUser" />
-        <item itemvalue="JUnit.AddressesTest.testSaveAddress" />
-        <item itemvalue="JUnit.AddressesTest" />
-        <item itemvalue="JUnit.UserTest.testUserConstructor" />
+        <item itemvalue="JUnit.CancelSubscriptionTest" />
+        <item itemvalue="JUnit.CancelSubscriptionTest.testDeleteSubs" />
+        <item itemvalue="JUnit.CancelSubscriptionTest.testSaveSubs" />
+        <item itemvalue="JUnit.CancelSubscriptionTest.testConstructorCancelSubs" />
       </list>
     </recent_temporary>
   </component>
@@ -225,18 +255,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/AutomotiveController.java</url>
-          <line>270</line>
+          <line>289</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/DriverService.java</url>
           <line>30</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/AutomotiveRidesService.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java</url>
+          <line>196</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizare curse</title>
+</head>
+<body>
+
+    <h2> Curse in desfasurare </h2>
+
+    <div th:if="${adminUserLogged == null || !adminUserLogged}">
+        <table>
+
+            <h4> Curse efectuate</h4>
+            <div th:if="${allUserRides ==null || allUserRides.isEmpty()}">
+                <span> Nu ati acceptat nicio cursa momentan !</span>
+            </div>
+
+            <div th:if="${allUserRides != null}">
+                <td>Descriere</td>
+                <td>Durata/(Minute)</td>
+                <td>Venit</td>
+            </div>
+            <th:block th:each="automotiveRide : ${allUserRides}">
+                <tr>
+                    <td th:text="${automotiveRide.description}"></td>
+                    <td th:text="${automotiveRide.duration}"></td>
+                    <td th:text="${automotiveRide.amountOfValueUserIsPayed} + ' RON'"></td>
+                    <td>
+                        <a th:href="@{endRides/__${automotiveRide.id}__}" class="btn btn-danger">Incheie cursa</a>
+                    </td>
+                </tr>
+            </th:block>
+
+        </table>
+
+</body>
+</html>

@@ -27,6 +27,9 @@ public class AutomotiveController {
     private UserService userService;
 
     @Autowired
+    private AddressService addressService;
+
+    @Autowired
     private AutomotiveRidesService automotiveRidesService;
 
     @Autowired
@@ -52,6 +55,7 @@ public class AutomotiveController {
         }
 
         model.addAttribute("allAutomotives", automotiveService.getAllAutomotives());
+        session.setAttribute("loggedUser", loggedUser);
 
         return "automotive";
     }
@@ -122,6 +126,7 @@ public class AutomotiveController {
             }
         }
 
+        session.setAttribute("loggedUser", loggedUser);
         model.addAttribute("automotiveRides", rideForCurrentAutomotive);
 
         return "automotivesOffers";
@@ -131,6 +136,14 @@ public class AutomotiveController {
     public String takeRideView(@PathVariable(name = "id") String automotiveRideId, HttpSession session, Model model)
     {
         User loggedUser = (User) session.getAttribute("loggedUser");
+        List<AutomotiveRides> automotiveRidesList = new ArrayList<>();
+        List<Long> automotiveRidesIds = (List<Long>) session.getAttribute("ridesIds");
+
+        if (automotiveRidesIds == null) {
+            automotiveRidesIds = new ArrayList<>();
+        }
+
+        loggedUser.setAutomotiveRidesList(automotiveRidesList);
         if (loggedUser.getUsername().equals("admin"))
         {
             model.addAttribute("adminIsLogged", Boolean.TRUE);
@@ -140,19 +153,23 @@ public class AutomotiveController {
 
         if (loggedUser != null)
         {
-            if (automotiveRides != null && automotiveRides.getRideIsTaken() != null && !automotiveRides.getRideIsTaken())
+            if (automotiveRides.getRideIsTaken() != null && !automotiveRides.getRideIsTaken())
             {
                 automotiveRides.setUser(loggedUser);
                 automotiveRides.setRideIsTaken(Boolean.TRUE);
+                automotiveRidesList.add(automotiveRides);
                 automotiveRidesService.saveAutomotiveRides(automotiveRides);
-                model.addAttribute("enjoyRide", "Penbtru ridicarea autovehiculului va rugam sa va prezentati la sediu cu cel putin 30 de minute inainte de inceperea cursei. Va multumim !");
+                automotiveRidesIds.add(automotiveRides.getId());
+                model.addAttribute("enjoyRide", "Pentru ridicarea autovehiculului va rugam sa va prezentati la sediu cu cel putin 30 de minute inainte de inceperea cursei. Va multumim !");
             }
 
-            if (automotiveRides != null && !loggedUser.equals(automotiveRides.getUser()))
+            if (automotiveRides.getRideIsTaken() != null && automotiveRides.getRideIsTaken() && !loggedUser.equals(automotiveRides.getUser()))
             {
                 OroErrors error = new OroErrors("Cursa a fost acceptata de alt utilizator ! Va rugam sa selectati alta cursa.");
                 model.addAttribute("rideTaken", error.getError());
             }
+
+            session.setAttribute("ridesIds", automotiveRidesIds);
         }
         else
         {
@@ -160,6 +177,7 @@ public class AutomotiveController {
             model.addAttribute("notLoggedUser", error.getError());
         }
 
+        session.setAttribute("loggedUser", loggedUser);
         return "takeRide";
     }
 
@@ -236,6 +254,7 @@ public class AutomotiveController {
 
         model.addAttribute("driverIsRegistered", driverIsRegistered);
         model.addAttribute("success", success);
+        session.setAttribute("loggedUser", loggedUser);
 
         return "drivers";
     }
@@ -274,7 +293,7 @@ public class AutomotiveController {
             cancelSubscription.setUser(loggedUser);
             subscriptionService.saveCancelSubscription(cancelSubscription);
             Driver currentDriver = loggedUser.getDriver();
-            
+
             //setare driver null pe user ca sa se poata efectua stergerea
             loggedUser.setDriver(null);
             driverService.deleteDriverById(currentDriver.getId());
@@ -284,6 +303,7 @@ public class AutomotiveController {
 
         }
 
+        session.setAttribute("loggedUser", loggedUser);
         return "cancelActivityAsDriver";
     }
 }

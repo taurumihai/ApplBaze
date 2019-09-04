@@ -1,8 +1,6 @@
 package tauru.springframework.WebApp.controllers;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,17 +10,14 @@ import tauru.springframework.WebApp.entities.User;
 import tauru.springframework.WebApp.services.AutomotiveRidesService;
 import tauru.springframework.WebApp.services.RolesService;
 import tauru.springframework.WebApp.services.UserService;
-import tauru.springframework.WebApp.sessionConstants.SessionConstants;
 import tauru.springframework.WebApp.utilitare.OroErrors;
 import tauru.springframework.WebApp.utilitare.StringUtils;
 
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class HomeController {
@@ -44,13 +39,19 @@ public class HomeController {
     }
 
     @RequestMapping("/login")
-    public String view (String username, String password, Model model, HttpSession session, HttpServletRequest request) {
+    public String view(String username, String password, Model model, HttpServletRequest request) {
 
         List<OroErrors> oroErrorsList = new ArrayList<>();
         List<AutomotiveRides> allRidesFromDB = automotiveRidesService.findAll();
         List<AutomotiveRides> allRidesOfLoggedUser = new ArrayList<>();
         List<Roles> allRolesList = rolesService.findAllRoles();
-        session = request.getSession(true);
+        HttpSession session = request.getSession(true);
+        List<Long> endsList = (List<Long>) session.getAttribute("ridesCompleted");
+
+        if (endsList == null) {
+            endsList = new ArrayList<>();
+        }
+
 
         if (StringUtils.isNullOrEmpty(username) && StringUtils.isNullOrEmpty(password)) {
             return "login";
@@ -85,15 +86,18 @@ public class HomeController {
         for (AutomotiveRides rides : allRidesFromDB)
         {
 
-            if (rides.getUser() != null && rides.getUser().equals(loggedUser))
-            {
-                allRidesOfLoggedUser.add(rides);
-                totalAmmountPaid += rides.getAmountOfValueUserIsPayed();
-            }
+            for (Long id : endsList) {
+                if (rides.getId().equals(id) && rides.getRideIsCompleted())
+                {
 
-            if (!allRidesOfLoggedUser.isEmpty())
-            {
-                model.addAttribute("allUserRides", allRidesOfLoggedUser);
+                    allRidesOfLoggedUser.add(rides);
+                    totalAmmountPaid += rides.getAmountOfValueUserIsPayed();
+                }
+
+                if (!allRidesOfLoggedUser.isEmpty())
+                {
+                    model.addAttribute("allUserRides", allRidesOfLoggedUser);
+                }
             }
 
             model.addAttribute("totalPaid", totalAmmountPaid);
@@ -109,9 +113,11 @@ public class HomeController {
             loggedUser.setUserIsLoggedIn(Boolean.TRUE);
             loggedUser.setRolesList(allRolesList);
             userService.saveUSer(loggedUser);
+            session.setAttribute("loggedUser", loggedUser);
             return "welcome";
 
         }
+        session.setAttribute("loggedUser", loggedUser);
         return "login";
     }
 
@@ -142,7 +148,7 @@ public class HomeController {
 
             }
 
-            if (user.getEmail().equals(email)) {
+            if (user.getEmail() != null && user.getEmail().equals(email)) {
 
                 String error = "Please chose another email";
                 errorList.add(error);

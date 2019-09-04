@@ -37,7 +37,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Address> addressList;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<AutomotiveRides> automotiveRidesList;
 
     @OneToMany(mappedBy = "user", cascade={CascadeType.ALL})
@@ -159,5 +159,10 @@ public class User implements Serializable {
 
     public void setCancelSubscription(CancelSubscription cancelSubscription) {
         this.cancelSubscription = cancelSubscription;
+    }
+
+    // Doar pentru teste
+    public void setId(Long userId) {
+        this.id = userId;
     }
 }

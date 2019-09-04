@@ -11,8 +11,11 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("select users from User users where users.username = ?1 and users.password = ?2")
-    List<User> findUserByUserNameAndPassword(String userName, String password);
+    User findUserByUserNameAndPassword(String userName, String password);
 
     @Query("select users from User users where users.username = ?1")
     User findDriverByUserName(String username);
+//
+//    @Query("select users from User users where users.id = ?1")
+//    User findUserById(Long userId);
 }

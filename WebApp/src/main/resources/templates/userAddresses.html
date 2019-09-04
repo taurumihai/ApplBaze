@@ -10,7 +10,7 @@
 
     <div th:if="changedAddresses">
         <div class="form-group">
-            <label for="county">County</label>:
+            <label for="county">Judet</label>:
             <input type="text"
                    id="county"
                    name="county"
@@ -19,7 +19,7 @@
                    placeholder="">
         </div>
         <div class="form-group">
-            <label for="street">Street</label>:
+            <label for="street">Strada</label>:
             <input type="text"
                    id="street"
                    name="street"
@@ -27,7 +27,7 @@
                    placeholder="">
         </div>
         <div class="form-group">
-            <label for="streetNumber">Street Number</label>:
+            <label for="streetNumber">Numarul</label>:
             <input type="text"
                    id="streetNumber"
                    name="streetNumber"
@@ -35,38 +35,53 @@
                    placeholder="">
         </div>
         <div class="form-group">
-            <label for="zipCode">Zip Code</label>:
+            <label for="zipCode">Cod postal</label>:
             <input type="text"
                    id="zipCode"
                    name="zipCode"
                    class="form-control"
                    placeholder="">
         </div>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <input type="submit"
-                           name="login-submit"
-                           id="login-submit"
-                           class="form-control btn btn-info"
-                           value="Submit">
-                </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <input type="submit"
+                       name="login-submit"
+                       id="login-submit"
+                       class="form-control btn btn-info"
+                       value="Trimite">
             </div>
         </div>
     </div>
 </form>
 
-<button onclick="window.location.href='/profile'">Profile page</button>
+<button onclick="window.location.href='/profile'">Profilul dumneavoastra</button>
 
 
-    <div th:if="${addressesList != null}">
-        <div th:each=" address : ${addressesList}">
-                Jundetul: <span th:text="${address.county}"></span>
-                Strada: <span th:text="${address.street}"></span>
-                Nr. <span th:text="${address.streetNumber}"></span>
-                Cod postal: <span th:text="${address.zipCode}"></span>
+    <div>
+        <table>
+
+            <h4> Adrese adaugate</h4>
+            <div th:if="${addressesList ==null || addressesList.isEmpty()}">
+                <span> Nu aveti nicio adresa adaugata !</span>
             </div>
-        </div>
+
+            <div th:if="${allUserRides != null}">
+                <td>Judetul</td>
+                <td>Strada </td>
+                <td>Numarul</td>
+                <td>Cod postal</td>
+            </div>
+            <th:block th:each="address : ${addressesList}">
+                <tr>
+                    <td th:text="${address.county}"></td>
+                    <td th:text="${address.street}"></td>
+                    <td th:text="${address.streetNumber}"></td>
+                    <td th:text="${address.zipCode}"></td>
+                </tr>
+            </th:block>
+
+        </table>
+    </div>
 
     </div>
     <div th:if="${loggedUser.hasChangedAddressInfos != null && !loggedUser.hasChangedAddressInfos}">

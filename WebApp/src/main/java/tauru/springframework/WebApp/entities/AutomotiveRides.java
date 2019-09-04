@@ -29,6 +29,9 @@ public class AutomotiveRides {
     @Column(name = "ride_start_at")
     private Date rideStartAt;
 
+    @Column(name ="ride_is_completed")
+    private Boolean rideIsCompleted = Boolean.FALSE;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "User_id")
     private User user;
@@ -102,5 +105,13 @@ public class AutomotiveRides {
 
     public AutomotiveRides() {
 
+    }
+
+    public Boolean getRideIsCompleted() {
+        return rideIsCompleted;
+    }
+
+    public void setRideIsCompleted(Boolean rideIsCompleted) {
+        this.rideIsCompleted = rideIsCompleted;
     }
 }
