@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
+
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" th:href="@{/css/main.css}">
     <title>Profile</title>
+
 </head>
 <body>
 
@@ -15,7 +18,7 @@
         <a href="/endRides"> Finalizeaza curse</a>
 
         <div th:if="${adminUserLogged == null || !adminUserLogged}">
-            <table>
+            <table id="table">
 
                 <h4> Adrese curente</h4>
                 <div th:if="${userAddressesList ==null || userAddressesList.isEmpty()}">
@@ -41,10 +44,10 @@
         </div>
 
         <div th:if="${adminUserLogged == null || !adminUserLogged}">
-            <table>
+            <table id="table2">
                 <h4> Date personale</h4>
 
-                <div th:if="${userAddressesList != null}">
+                <div th:if="${loggedUser != null}">
                     <td>Nume</td>
                     <td>Prenume</td>
                     <td>Email</td>

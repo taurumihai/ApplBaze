@@ -46,8 +46,8 @@
     </form>
 
     <div th:if="${errorList != null}">
-        <div th:each="error : ${errorList}">
-            <span th:text="${error}"/>
+        <div th:each="lilError : ${errorList}">
+            <span th:text="${lilError.error}"></span>
         </div>
     </div>
 </body>

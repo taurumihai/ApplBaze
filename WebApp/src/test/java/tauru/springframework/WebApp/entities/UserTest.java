@@ -56,7 +56,7 @@ public class UserTest {
         user.setUsername(userName);
         userRepository.save(user);
 
-        User findSavedUser = userRepository.findDriverByUserName(userName);
+        User findSavedUser = userRepository.findUserByUsername(userName);
         LOGGER.info("Save method userName should be equals");
         assertEquals(findSavedUser.getUsername(), userName);
     }
@@ -67,7 +67,7 @@ public class UserTest {
         user.setUsername(userName);
         userRepository.save(user);
         userRepository.delete(user);
-        User checkingIfUserExist = userRepository.findDriverByUserName(userName);
+        User checkingIfUserExist = userRepository.findUserByUsername(userName);
         LOGGER.info( "Checking if user was deleted after calling deleteUser method from repo " + (checkingIfUserExist == null));
         assertNull("Should be null", checkingIfUserExist);
     }

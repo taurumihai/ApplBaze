@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Finalizare curse</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" th:href="@{/css/main.css}">
 </head>
 <body>
 
     <h2> Curse in desfasurare </h2>
 
     <div th:if="${adminUserLogged == null || !adminUserLogged}">
-        <table>
+        <table id="table">
 
             <h4> Curse efectuate</h4>
             <div th:if="${allUserRides ==null || allUserRides.isEmpty()}">
                 <span> Nu ati acceptat nicio cursa momentan !</span>
             </div>
 
-            <div th:if="${allUserRides != null}">
+            <div th:if="${allUserRides != null && !allUserRides.isEmpty()}">
                 <td>Descriere</td>
                 <td>Durata/(Minute)</td>
                 <td>Venit</td>
+                <td>Cursa finalizata</td>
             </div>
             <th:block th:each="automotiveRide : ${allUserRides}">
                 <tr>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Oferte autovehicule</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" th:href="@{/css/main.css}">
 </head>
 <body>
 
@@ -12,7 +13,7 @@
 
     <div th:if="${automotiveRides!=null && !automotiveRides.isEmpty()}">
 
-        <table>
+        <table id="table">
             <td>Descriere</td>
             <td>Durata</td>
             <td>Venit</td>

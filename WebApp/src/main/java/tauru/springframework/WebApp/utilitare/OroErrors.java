@@ -1,12 +1,10 @@
 package tauru.springframework.WebApp.utilitare;
 
-public class OroErrors {
+public class OroErrors extends Throwable{
 
     private String error;
 
-    private Boolean hasError;
-
-    public OroErrors() {
+    public OroErrors(){
 
     }
 
@@ -23,11 +21,4 @@ public class OroErrors {
         this.error = error;
     }
 
-    public Boolean getHasError() {
-        return hasError;
-    }
-
-    public void setHasError(Boolean hasError) {
-        this.hasError = hasError;
-    }
 }

@@ -21,9 +21,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Controller
 public class UserProfileController {
+
+    private static final Logger LOGGER = Logger.getLogger(UserProfileController.class.getName());
 
     @Autowired
     private UserService userService;
@@ -43,6 +46,7 @@ public class UserProfileController {
         User loggedUser = (User) session.getAttribute("loggedUser");
 
         if (loggedUser != null &&  loggedUser.getAddressList() != null && !loggedUser.getAddressList().isEmpty()) {
+            model.addAttribute("loggedUser", loggedUser);
             model.addAttribute("userAddressesList", loggedUser.getAddressList());
             model.addAttribute("loggedUserEmail", loggedUser.getEmail());
             model.addAttribute("loggedUserFirstName", StringUtils.getUserName(loggedUser.getFirstName()));
@@ -99,6 +103,11 @@ public class UserProfileController {
                                   HttpSession session, Model model) {
 
         User loggedUser = (User) session.getAttribute("loggedUser");
+
+        if (loggedUser == null) {
+
+            return "login";
+        }
 
         List<OroErrors> errors = new ArrayList<>();
 
@@ -166,6 +175,11 @@ public class UserProfileController {
 
     @RequestMapping("/endRides")
     public String endrideView(HttpSession session, Model model) {
+
+        User loggedUser = (User) session.getAttribute("loggedUser");
+        if (loggedUser == null) {
+            return "login";
+        }
 
         List<AutomotiveRides> list = new ArrayList<>();
         List<Long> ridesIds = (List<Long>) session.getAttribute("ridesIds");

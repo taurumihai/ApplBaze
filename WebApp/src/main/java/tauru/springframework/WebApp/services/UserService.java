@@ -7,14 +7,18 @@ import org.springframework.stereotype.Service;
 import tauru.springframework.WebApp.entities.Driver;
 import tauru.springframework.WebApp.entities.User;
 import tauru.springframework.WebApp.repositories.UserRepository;
+import tauru.springframework.WebApp.utilitare.StringUtils;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 @Transactional
 public class UserService {
+
+    private static final Logger LOGGER = Logger.getLogger(UserService.class.getName());
 
     @Autowired
     private UserRepository userRepository;
@@ -42,14 +46,14 @@ public class UserService {
 
             for(User user : userList) {
 
-                if (user.getUsername().equals(username)) {
+                if (!StringUtils.isNullOrEmpty(user.getUsername()) && user.getUsername().equals(username)) {
 
                     return user;
                 }
             }
         }
 
-        System.out.println("User not found");
+        LOGGER.info("Returning null for findUserByUserName with usernam: " + username);
         return null;
     }
 
@@ -67,9 +71,18 @@ public class UserService {
         return entity;
     }
 
+    public User findUserByEmail(String email) {
+
+        if (!StringUtils.isNullOrEmpty(email)) {
+            return userRepository.findUserByEmail(email);
+        }
+        LOGGER.info("Returning null for findUserByEmail with email null ! " + email);
+        return null;
+    }
+
     public Driver findDriverRegisteredByUserName(String username) {
 
-        User findUser = userRepository.findDriverByUserName(username);
+        User findUser = userRepository.findUserByUsername(username);
 
         if (findUser != null && findUser.getDriver() != null) {
 

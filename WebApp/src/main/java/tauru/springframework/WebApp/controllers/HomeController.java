@@ -1,5 +1,6 @@
 package tauru.springframework.WebApp.controllers;
 
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +19,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Controller
 public class HomeController {
+
+    private static final Logger LOGGER = Logger.getLogger(HomeController.class.getName());
 
     @Autowired
     private UserService userService;
@@ -32,8 +36,7 @@ public class HomeController {
     private RolesService rolesService;
 
     @RequestMapping("/")
-    public String viewHome(Model model){
-
+    public String viewHome(){
 
         return "index";
     }
@@ -42,26 +45,35 @@ public class HomeController {
     public String view(String username, String password, Model model, HttpServletRequest request) {
 
         List<OroErrors> oroErrorsList = new ArrayList<>();
-        List<AutomotiveRides> allRidesFromDB = automotiveRidesService.findAll();
         List<AutomotiveRides> allRidesOfLoggedUser = new ArrayList<>();
         List<Roles> allRolesList = rolesService.findAllRoles();
         HttpSession session = request.getSession(true);
-        List<Long> endsList = (List<Long>) session.getAttribute("ridesCompleted");
 
-        if (endsList == null) {
-            endsList = new ArrayList<>();
+        // To update completed rides in profile page for each user in rela time
+        List<Long> rideCompletedList = (List<Long>) session.getAttribute("ridesCompleted");
+        if (rideCompletedList == null) {
+            rideCompletedList = new ArrayList<>();
         }
-
 
         if (StringUtils.isNullOrEmpty(username) && StringUtils.isNullOrEmpty(password)) {
             return "login";
         }
 
         User loggedUser = userService.findUSerByUSernameAndPassword(username, password);
-        if (loggedUser != null) {
-            session.setAttribute("loggedUser", loggedUser);
-        } else {
-            model.addAttribute("logginError", "Username-ul sau parola este incorecta.");
+        try {
+
+            if (userExist(loggedUser)) {
+
+                session.setAttribute("loggedUser", loggedUser);
+
+            } else {
+
+                oroErrorsList.add(new OroErrors("Username-ul sau parola este incorecta."));
+                model.addAttribute("logginError", "Username-ul sau parola este incorecta.");
+            }
+
+        } catch (OroErrors oroErrors) {
+            oroErrors.printStackTrace();
         }
 
         if (loggedUser != null && loggedUser.getDriver() != null)
@@ -83,10 +95,9 @@ public class HomeController {
 
         Double totalAmmountPaid = 0.0;
 
-        for (AutomotiveRides rides : allRidesFromDB)
+        for (AutomotiveRides rides : automotiveRidesService.findAll())
         {
-
-            for (Long id : endsList) {
+            for (Long id : rideCompletedList) {
                 if (rides.getId().equals(id) && rides.getRideIsCompleted())
                 {
 
@@ -130,35 +141,29 @@ public class HomeController {
         }
 
         List<User> userList = userService.findAllUsers();
-        List<String> errorList = new ArrayList<String>();
+        List<OroErrors> errorList = new ArrayList<>();
         List<Roles> allRolesList = rolesService.findAllRoles();
+        User userByUsername = userService.findUserByUserName(username);
+        User userByEmail = userService.findUserByEmail(email);
 
         if (allRolesList != null && !allRolesList.isEmpty())
         {
             allRolesList.remove(1);
         }
 
+        if (userByUsername != null && userList.contains(userByUsername)){
+            OroErrors error = new OroErrors("Username existent! Va rugam schimbati username-ul");
+            errorList.add(error);
+        }
 
-        for (User user : userList) {
-
-            if (user.getUsername().equals(username)) {
-
-                String error = "Please chose another username";
-                errorList.add(error);
-
-            }
-
-            if (user.getEmail() != null && user.getEmail().equals(email)) {
-
-                String error = "Please chose another email";
-                errorList.add(error);
-
-            }
+        if (userByEmail != null && userList.contains(userByEmail)) {
+            OroErrors oroError = new OroErrors("Email existent ! Va rugam scimbati email-ul.");
+            errorList.add(oroError);
         }
 
         if (StringUtils.isNullOrEmpty(password)) {
 
-            String error = "Completati parola";
+            OroErrors error = new OroErrors("Completati parola");
             errorList.add(error);
         }
 
@@ -175,5 +180,17 @@ public class HomeController {
         }
 
         return "register";
+    }
+
+    private Boolean userExist(User user) throws OroErrors {
+
+        try {
+            return userService.findAllUsers().contains(user);
+        } catch (Exception ex) {
+
+            LOGGER.info("Error finding user " + user);
+            throw new OroErrors("User not found");
+        }
+
     }
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Addresses</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" th:href="@{/css/main.css}">
 </head>
 <body>
 
@@ -58,7 +59,7 @@
 
 
     <div>
-        <table>
+        <table id="table">
 
             <h4> Adrese adaugate</h4>
             <div th:if="${addressesList ==null || addressesList.isEmpty()}">

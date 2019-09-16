@@ -1,13 +1,16 @@
 tauru/springframework/WebApp/WebAppApplication.class
 tauru/springframework/WebApp/controllers/AutomotiveController.class
+tauru/springframework/WebApp/entities/CancelSubscription.class
 tauru/springframework/WebApp/entities/AutomotiveRides.class
 tauru/springframework/WebApp/services/AutomotiveService.class
 tauru/springframework/WebApp/entities/User.class
+tauru/springframework/WebApp/repositories/CancelSubscriptionRepository.class
 tauru/springframework/WebApp/sessionConstants/SessionConstants.class
 tauru/springframework/WebApp/services/AddressService.class
 tauru/springframework/WebApp/utilitare/OroErrors.class
 tauru/springframework/WebApp/services/UserService.class
 tauru/springframework/WebApp/services/DriverService.class
+tauru/springframework/WebApp/services/CancelSubscriptionService.class
 tauru/springframework/WebApp/repositories/AutomotiveRidesRepository.class
 tauru/springframework/WebApp/controllers/UserProfileController.class
 tauru/springframework/WebApp/controllers/HomeController.class

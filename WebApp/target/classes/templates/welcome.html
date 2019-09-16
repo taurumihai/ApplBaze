@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" th:href="@{/css/main.css}">
 </head>
 <body>
 
@@ -17,7 +18,7 @@
 
 
     <div th:if="${adminUserLogged == null || !adminUserLogged}">
-        <table>
+        <table id="table">
 
             <h4> Curse efectuate</h4>
             <div th:if="${allUserRides ==null || allUserRides.isEmpty()}">
