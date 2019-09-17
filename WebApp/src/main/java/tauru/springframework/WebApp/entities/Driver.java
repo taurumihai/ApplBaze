@@ -1,5 +1,7 @@
 package tauru.springframework.WebApp.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +21,7 @@ public class Driver {
     @Column(name = "driver_is_registered")
     private Boolean isRegistered = Boolean.FALSE;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "driver")
     private User user;
 

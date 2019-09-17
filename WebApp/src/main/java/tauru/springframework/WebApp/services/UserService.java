@@ -104,6 +104,11 @@ public class UserService {
         return entity;
     }
 
+    public User findUserById(Long userId) {
+
+        return userRepository.findUserById(userId);
+    }
+
 //    public User findUserById(Long userId) {
 //
 //        return userRepository.findUserById(userId);

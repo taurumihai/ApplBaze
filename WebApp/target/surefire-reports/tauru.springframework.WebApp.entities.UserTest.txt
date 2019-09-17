@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tauru.springframework.WebApp.entities.UserTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.23 s - in tauru.springframework.WebApp.entities.UserTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 s - in tauru.springframework.WebApp.entities.UserTest

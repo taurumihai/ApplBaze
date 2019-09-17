@@ -2,43 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08bcb56d-2ab5-4e52-8388-950b1e2d0e0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/restControllers/ApiRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/utilitare/ObjectMapperHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/controllers/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/sessionConstants/SessionConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/utilitare/OroErrors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tauru/springframework/WebApp/utilitare/OroErrors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/automotive.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/automotive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/automotivesOffers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/automotivesOffers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/endRides.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/endRides.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/personalData.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/personalData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userAddresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userAddresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tauru/springframework/WebApp/entities/UserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/controllers/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/WebApp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/entities/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/repositories/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/sessionConstants/SessionConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/utilitare/OroErrors.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tauru/springframework/WebApp/utilitare/OroErrors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/automotive.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/automotive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/automotivesOffers.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/automotivesOffers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/endRides.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/endRides.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/personalData.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/personalData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userAddresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userAddresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-tauru.springframework.WebApp.WebAppApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-tauru.springframework.WebApp.WebAppApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-tauru.springframework.WebApp.entities.AddressesTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-tauru.springframework.WebApp.entities.AddressesTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-tauru.springframework.WebApp.entities.CancelSubscriptionTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-tauru.springframework.WebApp.entities.CancelSubscriptionTest.xml" afterDir="false" />
@@ -47,8 +27,6 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/tauru.springframework.WebApp.entities.AddressesTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/tauru.springframework.WebApp.entities.AddressesTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/tauru.springframework.WebApp.entities.CancelSubscriptionTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/tauru.springframework.WebApp.entities.CancelSubscriptionTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/tauru.springframework.WebApp.entities.UserTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/tauru.springframework.WebApp.entities.UserTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/WebApp.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tauru/springframework/WebApp/entities/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tauru/springframework/WebApp/entities/UserTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

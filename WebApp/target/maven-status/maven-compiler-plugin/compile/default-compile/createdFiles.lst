@@ -5,7 +5,6 @@ tauru/springframework/WebApp/entities/AutomotiveRides.class
 tauru/springframework/WebApp/services/AutomotiveService.class
 tauru/springframework/WebApp/entities/User.class
 tauru/springframework/WebApp/repositories/CancelSubscriptionRepository.class
-tauru/springframework/WebApp/sessionConstants/SessionConstants.class
 tauru/springframework/WebApp/services/AddressService.class
 tauru/springframework/WebApp/utilitare/OroErrors.class
 tauru/springframework/WebApp/services/UserService.class

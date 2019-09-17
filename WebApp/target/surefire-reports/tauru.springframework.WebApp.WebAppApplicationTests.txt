@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tauru.springframework.WebApp.WebAppApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.739 s - in tauru.springframework.WebApp.WebAppApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.655 s - in tauru.springframework.WebApp.WebAppApplicationTests

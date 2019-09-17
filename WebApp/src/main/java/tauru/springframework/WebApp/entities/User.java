@@ -1,12 +1,17 @@
 package tauru.springframework.WebApp.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import tauru.springframework.WebApp.utilitare.ObjectMapperHelper;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "Users")
-public class User implements Serializable {
+public class User extends ObjectMapperHelper implements Serializable{
 
 
     @Id
@@ -48,8 +53,9 @@ public class User implements Serializable {
     private Driver driver;
 
     @OneToOne(fetch = FetchType.LAZY, cascade =  CascadeType.ALL, mappedBy = "user")
-    private CancelSubscription cancelSubscription;
+    transient private CancelSubscription cancelSubscription;
 
+    @JsonIgnore
     public List<Roles> getRolesList() {
         return rolesList;
     }
@@ -58,6 +64,7 @@ public class User implements Serializable {
         this.rolesList = rolesList;
     }
 
+    @JsonIgnore
     public List<AutomotiveRides> getAutomotiveRidesList() {
         return automotiveRidesList;
     }
@@ -110,6 +117,7 @@ public class User implements Serializable {
         return id;
     }
 
+    @JsonIgnore
     public List<Address> getAddressList() {
         return addressList;
     }
